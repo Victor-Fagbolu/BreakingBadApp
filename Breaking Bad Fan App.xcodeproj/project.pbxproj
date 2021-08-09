@@ -86,11 +86,11 @@
 		D3573FF226C1AD8E000E621A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D3573FE626C1AD77000E621A /* ContentView.swift */,
-				D3573FF526C1AE0B000E621A /* CharactersView.swift */,
 				D3573FF726C1AEBA000E621A /* TabView.swift */,
-				D3573FFB26C1AFA1000E621A /* EpisodesView.swift */,
+				D3573FE626C1AD77000E621A /* ContentView.swift */,
 				D357400126C1B9D4000E621A /* CharacterDetailsView.swift */,
+				D3573FF526C1AE0B000E621A /* CharactersView.swift */,
+				D3573FFB26C1AFA1000E621A /* EpisodesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

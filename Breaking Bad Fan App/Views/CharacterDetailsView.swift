@@ -6,11 +6,36 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct CharacterDetailsView: View {
     var character: Character
     var body: some View {
-        Text("Hello, Character Details!")
+        ScrollView {
+            WebImage(url: character.img)
+                .resizable()
+                .indicator(.activity)
+                .aspectRatio(contentMode: .fit)
+            VStack(alignment: .leading) {
+                
+                Text(character.name)
+                    .font(.title)
+                Text(character.nickname)
+                    .font(.title2)
+                    .foregroundColor(.secondary)
+                
+                Spacer().frame(height: 20)
+                
+                Text("Status")
+                    .font(.title2)
+                Text(character.status)
+                    .font(.title3)
+                    .foregroundColor(.secondary)
+
+            }
+            .padding()
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 }
 
