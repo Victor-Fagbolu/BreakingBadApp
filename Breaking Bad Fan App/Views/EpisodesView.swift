@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct EpisodesView: View {
+    
+    @ObservedObject var epiodesViewModel = EpisosdesViewModel()
+    
     var body: some View {
-        Text("Hello, Episodes!")
+
+        NavigationView {
+            List {
+                ForEach(epiodesViewModel.episodes) { episode in
+                    NavigationLink(
+                        destination: EpisodeDetailView(episode: episode),
+                        label: {
+                            VStack(alignment: .leading) {
+                                Text("Season # \(episode.season)")
+                                Text("Episode # \(episode.episode)")
+                                Text(episode.title)
+                            }
+                        })
+                }
+            }
+            .navigationTitle("Episodes")
+            .onAppear(perform: {
+                epiodesViewModel.fetchEpisodes()
+            })
+        }
     }
 }
 

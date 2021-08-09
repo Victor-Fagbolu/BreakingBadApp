@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct CharactersView: View {
     
-    @ObservedObject var characterViewModel = CharacterViewModel()
+    @ObservedObject var characterViewModel = CharactersViewModel()
     
     let columns = [
         GridItem(.flexible(minimum: 100, maximum: 200), spacing: 16),
