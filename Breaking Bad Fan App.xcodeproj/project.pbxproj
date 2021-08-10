@@ -10,6 +10,7 @@
 		D34DA43D26C1CA9800CE4DEF /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34DA43C26C1CA9800CE4DEF /* EpisodesViewModel.swift */; };
 		D34DA43F26C1CADF00CE4DEF /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34DA43E26C1CADF00CE4DEF /* Episode.swift */; };
 		D34DA44126C1D76800CE4DEF /* EpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34DA44026C1D76800CE4DEF /* EpisodeDetailView.swift */; };
+		D34DA44326C26F0D00CE4DEF /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34DA44226C26F0D00CE4DEF /* SearchBarView.swift */; };
 		D3573FE526C1AD77000E621A /* Breaking_Bad_Fan_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3573FE426C1AD77000E621A /* Breaking_Bad_Fan_AppApp.swift */; };
 		D3573FE726C1AD77000E621A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3573FE626C1AD77000E621A /* ContentView.swift */; };
 		D3573FE926C1AD78000E621A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3573FE826C1AD78000E621A /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		D34DA43C26C1CA9800CE4DEF /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModel.swift; sourceTree = "<group>"; };
 		D34DA43E26C1CADF00CE4DEF /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		D34DA44026C1D76800CE4DEF /* EpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailView.swift; sourceTree = "<group>"; };
+		D34DA44226C26F0D00CE4DEF /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		D3573FE126C1AD77000E621A /* Breaking Bad Fan App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breaking Bad Fan App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3573FE426C1AD77000E621A /* Breaking_Bad_Fan_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breaking_Bad_Fan_AppApp.swift; sourceTree = "<group>"; };
 		D3573FE626C1AD77000E621A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				D357400126C1B9D4000E621A /* CharacterDetailsView.swift */,
 				D3573FFB26C1AFA1000E621A /* EpisodesView.swift */,
 				D34DA44026C1D76800CE4DEF /* EpisodeDetailView.swift */,
+				D34DA44226C26F0D00CE4DEF /* SearchBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				D357400026C1B6B1000E621A /* CharactersViewModel.swift in Sources */,
 				D34DA43D26C1CA9800CE4DEF /* EpisodesViewModel.swift in Sources */,
 				D34DA43F26C1CADF00CE4DEF /* Episode.swift in Sources */,
+				D34DA44326C26F0D00CE4DEF /* SearchBarView.swift in Sources */,
 				D3573FE526C1AD77000E621A /* Breaking_Bad_Fan_AppApp.swift in Sources */,
 				D357400226C1B9D4000E621A /* CharacterDetailsView.swift in Sources */,
 				D3573FF826C1AEBA000E621A /* TabView.swift in Sources */,

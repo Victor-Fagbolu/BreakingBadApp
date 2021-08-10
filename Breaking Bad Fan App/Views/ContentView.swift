@@ -18,3 +18,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+extension UIApplication {
+    func dismissKeyboard() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
