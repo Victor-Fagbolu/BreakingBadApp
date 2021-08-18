@@ -22,6 +22,7 @@
 		D357400026C1B6B1000E621A /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3573FFF26C1B6B1000E621A /* CharactersViewModel.swift */; };
 		D357400226C1B9D4000E621A /* CharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357400126C1B9D4000E621A /* CharacterDetailsView.swift */; };
 		D357400526C1BA47000E621A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D357400426C1BA47000E621A /* SDWebImageSwiftUI */; };
+		D3B551FB26CC6D3600BAFCDD /* SeasonsDisclosureGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B551FA26CC6D3600BAFCDD /* SeasonsDisclosureGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D3573FFD26C1B331000E621A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		D3573FFF26C1B6B1000E621A /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		D357400126C1B9D4000E621A /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
+		D3B551FA26CC6D3600BAFCDD /* SeasonsDisclosureGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsDisclosureGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				D3573FF326C1AD9F000E621A /* View Models */,
-				D3573FF226C1AD8E000E621A /* Views */,
 				D3573FF426C1ADA7000E621A /* Models */,
+				D3573FF226C1AD8E000E621A /* Views */,
 				D3573FE826C1AD78000E621A /* Assets.xcassets */,
 				D3573FE426C1AD77000E621A /* Breaking_Bad_Fan_AppApp.swift */,
 				D3573FEA26C1AD78000E621A /* Preview Content */,
@@ -101,6 +103,7 @@
 				D3573FFB26C1AFA1000E621A /* EpisodesView.swift */,
 				D34DA44026C1D76800CE4DEF /* EpisodeDetailView.swift */,
 				D34DA44226C26F0D00CE4DEF /* SearchBarView.swift */,
+				D3B551FA26CC6D3600BAFCDD /* SeasonsDisclosureGroup.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			files = (
 				D3573FE726C1AD77000E621A /* ContentView.swift in Sources */,
 				D357400026C1B6B1000E621A /* CharactersViewModel.swift in Sources */,
+				D3B551FB26CC6D3600BAFCDD /* SeasonsDisclosureGroup.swift in Sources */,
 				D34DA43D26C1CA9800CE4DEF /* EpisodesViewModel.swift in Sources */,
 				D34DA43F26C1CADF00CE4DEF /* Episode.swift in Sources */,
 				D34DA44326C26F0D00CE4DEF /* SearchBarView.swift in Sources */,

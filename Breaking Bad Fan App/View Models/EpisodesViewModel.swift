@@ -11,6 +11,13 @@ class EpisosdesViewModel: ObservableObject {
     @Published var episodes = [Episode]()
     @Published var characters = [Character]()
     
+    @Published var seriesToEpisodes = [String:[Episode]]()
+    
+    @Published var sriesKeys = [String]()
+    @Published var seriesToSeason = [String:[String]]()
+    @Published var episosdeStructure = [String: [String:[Episode]]]()
+    
+    
     func fetchEpisodes() {
         let url = URL(string: "https://www.breakingbadapi.com/api/episodes")!
         URLSession.shared.dataTask(with: url) { data, _, error in
@@ -22,6 +29,7 @@ class EpisosdesViewModel: ObservableObject {
                     do {
                         let episodes = try decoder.decode([Episode].self, from: data)
                         DispatchQueue.main.async {
+                            self.organizeEpisodes(episodes: episodes)
                             self.episodes = episodes
                         }
                     } catch {
@@ -30,6 +38,52 @@ class EpisosdesViewModel: ObservableObject {
                 }
             }
         }.resume()
+    }
+    
+    func organizeEpisodes(episodes : [Episode]) {
+        // Reset all organizational structures
+        self.sriesKeys.removeAll()
+        self.seriesToSeason.removeAll()
+        self.episosdeStructure.removeAll()
+        for episode in episodes {
+            insertIntoStruucture(episode: episode)
+        }
+//        print("FINISHED CONSTRUCTING")
+//
+//        for series in self.sriesKeys {
+//            print(" ")
+//            print(series)
+//            for season in self.seriesToSeason[series]! {
+//                print("  ->\(season)")
+//                for episode in self.episosdeStructure[series]![season]!{
+//                    print("        -->\(episode.title)")
+//                }
+//            }
+//        }
+    }
+    func insertIntoStruucture(episode: Episode) {
+        let episodeSeries = episode.series
+        let episodeSeason = episode.season.trimmingCharacters(in: .whitespacesAndNewlines)
+        //Check Series
+        if self.episosdeStructure[episodeSeries] == nil {
+            self.sriesKeys.append(episodeSeries)
+            self.episosdeStructure[episodeSeries] = [String:[Episode]]()
+        }
+        
+        //Check Season
+        if self.episosdeStructure[episodeSeries]![episodeSeason] == nil {
+            if self.seriesToSeason[episodeSeries] == nil {
+                self.seriesToSeason[episodeSeries] = [String]()
+            }
+            if !self.seriesToSeason[episodeSeries]!.contains(episodeSeason) { // if the episosde is not already in the array
+                //Typo in the API with season:" 1" ... extra space in string
+                self.seriesToSeason[episodeSeries]!.append(episodeSeason)
+            }
+            self.episosdeStructure[episodeSeries]![episodeSeason] = [Episode]()
+        }
+        
+        self.episosdeStructure[episode.series]![episodeSeason]!.append(episode)
+        
     }
     
     func fetchCharactersForEpisosde(episodeCharacters: [String]) {
