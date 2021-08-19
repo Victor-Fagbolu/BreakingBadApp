@@ -3,7 +3,6 @@
 This breaking bad app was initially devloped in accordance with the requirements outlined in the Challenge, I've added some featturess I'll outline here.
 
 ## Characters Page
-
     - Added search bar. Able to search character based on either name or nickname
     - Clicking on character will lead to a character's detailed page as outlined in the challenge
     - Star at the top right of picture is a favorites icon. Tapping the star will add the character to the user's favorites.
