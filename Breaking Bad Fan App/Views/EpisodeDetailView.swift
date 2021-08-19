@@ -59,7 +59,7 @@ struct EpisodeDetailView: View {
                 .onAppear(perform: {
                     epiodesViewModel.fetchCharactersForEpisosde(episodeCharacters: episode.characters)
                 })
-
+                
             }
         }
         

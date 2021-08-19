@@ -45,11 +45,21 @@ struct CharactersView: View {
                                 destination: CharacterDetailsView(character: character),
                                 label: {
                                     VStack(alignment: .center) {
-                                        WebImage(url: character.img)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(height: 150)
-                                            .cornerRadius(8)
+                                        ZStack {
+                                            WebImage(url: character.img)
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(height: 150)
+                                                .cornerRadius(8)
+                                            Image(systemName: (characterViewModel.favoriteCharacters.contains(character.name) ? "star.fill" : "star"))
+                                                .frame(width: 20, height: 20, alignment: .leading)
+                                                .position(x: 10, y: 10)
+                                                .foregroundColor(.yellow)
+                                                .onTapGesture(perform: {
+                                                    characterViewModel.updateFavorites(name: character.name)
+                                                })
+                                            
+                                        }
                                         Text(character.nickname)
                                     }
                                 })

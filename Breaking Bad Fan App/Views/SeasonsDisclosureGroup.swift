@@ -22,26 +22,26 @@ struct SeasonsDisclosureGroup: View {
     
     var body: some View {
         DisclosureGroup(
-          content: {
-              VStack {
-                  Divider()
-                  ForEach(viewModel.episosdeStructure[series]![season]!) { episode in
-                      NavigationLink(
-                          destination: EpisodeDetailView(episode: episode),
-                          label: {
-                              VStack{ // Episode Containter
-                                  Text("\(episode.episode). \(episode.title)")
-                                      .frame(maxWidth: .infinity, alignment: .leading)
-                                      .padding()
-                              }
-                          })
-                  }
-              }
-          },
-          label: {
-            Text("Season \(season)")
-                  .font(.title2)
-          }
+            content: {
+                VStack {
+                    Divider()
+                    ForEach(viewModel.episosdeStructure[series]![season]!) { episode in
+                        NavigationLink(
+                            destination: EpisodeDetailView(episode: episode),
+                            label: {
+                                VStack{ // Episode Containter
+                                    Text("\(episode.episode). \(episode.title)")
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding()
+                                }
+                            })
+                    }
+                }
+            },
+            label: {
+                Text("Season \(season)")
+                    .font(.title2)
+            }
         )
             .accentColor(.white)
             .font(.title2)
@@ -49,9 +49,9 @@ struct SeasonsDisclosureGroup: View {
             .padding(.all)
             .background(Color("SeasonsClosureBackground"))
             .cornerRadius(8)
-            Spacer()
-            
-                .frame(maxWidth: .infinity, alignment: .leading)
+        Spacer()
+        
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

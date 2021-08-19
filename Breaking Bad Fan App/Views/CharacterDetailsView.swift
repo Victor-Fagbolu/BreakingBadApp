@@ -9,7 +9,9 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct CharacterDetailsView: View {
+    
     var character: Character
+    
     var body: some View {
         ScrollView {
             WebImage(url: character.img)
@@ -31,7 +33,7 @@ struct CharacterDetailsView: View {
                 Text(character.status)
                     .font(.title3)
                     .foregroundColor(.secondary)
-
+                
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)

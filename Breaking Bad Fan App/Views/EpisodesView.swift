@@ -11,11 +11,9 @@ struct EpisodesView: View {
     
     @ObservedObject var epiodesViewModel = EpisosdesViewModel()
     
-    var seriesKeys = ["Breaking Bad", "Better Call Saul"] //Optimize
-    
     @State private var searchText = ""
     @State private var searching = false
-        
+    
     var searchResults: [Episode] {
         if searchText.isEmpty {
             return epiodesViewModel.episodes
@@ -31,30 +29,30 @@ struct EpisodesView: View {
     }
     
     @State private var isExpanded = false
-
+    
     var body: some View {
         NavigationView {
             VStack {
                 SearchBarView(searchText: $searchText, searching: $searching)
                 if searchText.isEmpty {
                     ScrollView {
-                            VStack(alignment: .leading) { // ScrollView Containter
-                                ForEach(seriesKeys, id: \.self) { series in
-                                    VStack(alignment: .leading) { // Series Containter
-                                        Text(series)
-                                            .font(.title)
-                                        ForEach((epiodesViewModel.seriesToSeason[series] != nil) ? epiodesViewModel.seriesToSeason[series]! : [], id: \.self) { season in
-                                            VStack(alignment: .leading) { // Seasons Containter
-                                                SeasonsDisclosureGroup(series: series, season: season, viewModel: epiodesViewModel)
-                                            }
-                                            .frame(maxWidth: .infinity, alignment: .leading)
+                        VStack(alignment: .leading) { // ScrollView Containter
+                            ForEach(epiodesViewModel.sriesKeys, id: \.self) { series in
+                                VStack(alignment: .leading) { // Series Containter
+                                    Text(series)
+                                        .font(.title)
+                                    ForEach((epiodesViewModel.seriesToSeason[series] != nil) ? epiodesViewModel.seriesToSeason[series]! : [], id: \.self) { season in
+                                        VStack(alignment: .leading) { // Seasons Containter
+                                            SeasonsDisclosureGroup(series: series, season: season, viewModel: epiodesViewModel)
                                         }
-                                        Spacer().frame(height: 20)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
                                     }
-                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    Spacer().frame(height: 20)
                                 }
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 } else {
                     List {

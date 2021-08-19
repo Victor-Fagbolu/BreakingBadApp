@@ -10,9 +10,7 @@ import Foundation
 class EpisosdesViewModel: ObservableObject {
     @Published var episodes = [Episode]()
     @Published var characters = [Character]()
-    
-    @Published var seriesToEpisodes = [String:[Episode]]()
-    
+        
     @Published var sriesKeys = [String]()
     @Published var seriesToSeason = [String:[String]]()
     @Published var episosdeStructure = [String: [String:[Episode]]]()
@@ -40,6 +38,7 @@ class EpisosdesViewModel: ObservableObject {
         }.resume()
     }
     
+    // Creates a trie data scructure using dictionaries
     func organizeEpisodes(episodes : [Episode]) {
         // Reset all organizational structures
         self.sriesKeys.removeAll()
@@ -48,19 +47,8 @@ class EpisosdesViewModel: ObservableObject {
         for episode in episodes {
             insertIntoStruucture(episode: episode)
         }
-//        print("FINISHED CONSTRUCTING")
-//
-//        for series in self.sriesKeys {
-//            print(" ")
-//            print(series)
-//            for season in self.seriesToSeason[series]! {
-//                print("  ->\(season)")
-//                for episode in self.episosdeStructure[series]![season]!{
-//                    print("        -->\(episode.title)")
-//                }
-//            }
-//        }
     }
+    // Inssert an into the correct pisition in the trie data scrcture
     func insertIntoStruucture(episode: Episode) {
         let episodeSeries = episode.series
         let episodeSeason = episode.season.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -83,9 +71,9 @@ class EpisosdesViewModel: ObservableObject {
         }
         
         self.episosdeStructure[episode.series]![episodeSeason]!.append(episode)
-        
     }
     
+    // Retrives all character information given a character array
     func fetchCharactersForEpisosde(episodeCharacters: [String]) {
         characters.removeAll()
         let sortedCharacters = episodeCharacters.sorted()
@@ -130,6 +118,7 @@ class EpisosdesViewModel: ObservableObject {
         return editedName
     }
     
+    //Ussed by the search bar to filter elements
     static func searchCharacters(characters: [String], text: String) -> Bool {
         for character in characters {
             if searchString(text: character, searchString: text) {
